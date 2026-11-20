@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" data-chakra="throat" data-strength="bright">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>SEO Web and Video — Partner Share Links &amp; Referral Tracker</title>
+  <link rel="stylesheet" href="https://css.evolveearth.com/chakras.css">
+  <link rel="stylesheet" href="https://evolveearth.com/assets/v3/chakras-v3.css">
+  <script src="https://evolveearth.com/assets/v3/chakra-shell.js?v=3.0.7" defer></script>
+</head>
+<body>
+  <header class="site-header"><div class="container"><nav class="nav" aria-label="Main"><a class="brand" href="https://seowebandvideo.com/">SEO Web and Video</a><div class="nav-links"><a href="https://seowebandvideo.com/">Home</a><a class="btn" href="#links">Get Share Links</a></div></nav></div></header>
+  <main id="main">
+    <section class="section" id="links">
+      <div class="container stack">
+        <span class="kicker">SEO Web and Video · Referral Partner Links</span>
+        <h1 class="h1">Share SEO Web and Video &amp; Track Your Referrals</h1>
+        <p class="lead">Monthly video-to-shorts retainers, 10-video search sprints, and sub-second static site builds. Paid items split ~10% across the infinite referral chain (5% direct, 2.5% Tier 2, 1.25% Tier 3, Paid-When-Paid).</p>
+        <div class="card stack">
+          <label for="p-handle">Enter Your Partner Handle</label>
+          <input id="p-handle" type="text" class="input" value="partner108" placeholder="your_handle">
+          <div id="offer-rows" class="rows"><div class="row-item"><span data-tmpl="https://seowebandvideo.com/?offer=prod-sw-01&amp;ref={HANDLE}"><strong>1-Recording-Into-12-Shorts + 4 Ranked SEO Pillar Pages Monthly Engine ($1,500 / month):</strong> 10% pool (5.0% direct + 2^-k infinite downline) · <code>https://seowebandvideo.com/?offer=prod-sw-01&amp;ref=partner108</code></span><button type="button" class="btn btn--quiet btn--sm" data-copy-tmpl="https://seowebandvideo.com/?offer=prod-sw-01&amp;ref={HANDLE}">Copy Share Link</button></div><div class="row-item"><span data-tmpl="https://seowebandvideo.com/?offer=prod-sw-02&amp;ref={HANDLE}"><strong>10-Video YouTube &amp; Search SEO Optimization Sprint + Custom Infographics ($497 pack):</strong> 10% pool (5.0% direct + 2^-k infinite downline) · <code>https://seowebandvideo.com/?offer=prod-sw-02&amp;ref=partner108</code></span><button type="button" class="btn btn--quiet btn--sm" data-copy-tmpl="https://seowebandvideo.com/?offer=prod-sw-02&amp;ref={HANDLE}">Copy Share Link</button></div><div class="row-item"><span data-tmpl="https://seowebandvideo.com/?offer=prod-sw-03&amp;ref={HANDLE}"><strong>Sub-Second Static SEO Pillar Website + 10-Architecture Infographic Pack ($997 build):</strong> 8% pool (4.0% direct + 2^-k infinite downline) · <code>https://seowebandvideo.com/?offer=prod-sw-03&amp;ref=partner108</code></span><button type="button" class="btn btn--quiet btn--sm" data-copy-tmpl="https://seowebandvideo.com/?offer=prod-sw-03&amp;ref={HANDLE}">Copy Share Link</button></div><div class="row-item"><span data-tmpl="https://seowebandvideo.com/?ref={HANDLE}#contact"><strong>SEO Web and Video Free Search &amp; Short-Video Discovery Sign-Up ($0 Sign-Up):</strong> Free sign-up (locks permanent upline tree) · <code>https://seowebandvideo.com/?ref=partner108#contact</code></span><button type="button" class="btn btn--quiet btn--sm" data-copy-tmpl="https://seowebandvideo.com/?ref={HANDLE}#contact">Copy Share Link</button></div></div>
+          <p id="copy-note" class="small">Disclose paid referral links clearly per Federal Trade Commission guidelines.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container"><div class="fine"><span>SEO Web and Video Partner Program</span><a href="https://seowebandvideo.com/privacy/">Privacy</a></div></div></footer>
+  <script>
+  (function(){
+    var inp = document.getElementById("p-handle");
+    function clean(v){ return String(v||"partner108").toLowerCase().replace(/[^a-z0-9_-]/g,"") || "partner108"; }
+    function refresh(){
+      var h = clean(inp.value);
+      document.querySelectorAll("[data-tmpl]").forEach(function(sp){
+        var c = sp.querySelector("code");
+        if (c) c.textContent = sp.getAttribute("data-tmpl").replace("{HANDLE}", h);
+      });
+    }
+    inp.addEventListener("input", refresh);
+    document.querySelectorAll("[data-copy-tmpl]").forEach(function(b){
+      b.addEventListener("click", function(){
+        var u = b.getAttribute("data-copy-tmpl").replace("{HANDLE}", clean(inp.value));
+        if (navigator.clipboard) navigator.clipboard.writeText(u);
+        document.getElementById("copy-note").textContent = "Copied: " + u;
+      });
+    });
+  })();
+  </script>
+</body>
+</html>

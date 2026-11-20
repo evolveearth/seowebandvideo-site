@@ -1,0 +1,117 @@
+/* ==========================================================
+   CHAKRAS-APP.CSS — add-on for TOOLS: AI Studio, the Oracle,
+   IDEs, ComfyUI and any workbench. Load AFTER chakras.css.
+   Tools are dark by default (long sessions, less glare); the
+   chakra on <html> still picks the accent, fonts and corners.
+   <html data-chakra="oshna" data-tool="dark">   (or data-tool="light")
+   ========================================================== */
+[data-tool="dark"]{
+  --bg:#0E1013;--surface:#15181D;--surface-2:#1B1F26;--soft:#1F242C;
+  --ink:#F3F4F6;--ink-soft:#A3A9B5;--line:#262B34;--shadow:rgba(0,0,0,.6);
+  /* --action, --link, fonts and radii still come from data-chakra */
+}
+[data-tool="dark"] a{color:var(--accent-text,var(--ink))}
+[data-tool="light"]{--surface-2:#F4F3F1}
+[data-tool] body,[data-tool]{background:var(--bg);color:var(--ink);font-size:14px;line-height:1.5}
+
+/* Workbench frame: top bar · left rail · main · right panel · bottom dock */
+.wb{display:grid;height:100vh;grid-template-rows:48px 1fr auto;grid-template-columns:56px minmax(0,1fr) minmax(280px,360px);grid-template-areas:"top top top" "rail main side" "rail dock dock"}
+.wb--no-side{grid-template-columns:56px minmax(0,1fr);grid-template-areas:"top top" "rail main" "rail dock"}
+.wb__top{grid-area:top;display:flex;align-items:center;gap:12px;padding:0 14px;background:var(--surface);border-bottom:1px solid var(--line)}
+.wb__rail{grid-area:rail;display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px 0;background:var(--surface);border-right:1px solid var(--line)}
+.wb__main{grid-area:main;min-width:0;overflow:auto;background:var(--bg)}
+.wb__side{grid-area:side;overflow:auto;background:var(--surface);border-left:1px solid var(--line)}
+.wb__dock{grid-area:dock;background:var(--surface);border-top:1px solid var(--line);max-height:40vh;overflow:auto}
+@media (max-width:900px){.wb{grid-template-columns:56px minmax(0,1fr);grid-template-areas:"top top" "rail main" "rail dock"}.wb__side{display:none}}
+
+.rail-btn{width:40px;height:40px;border-radius:calc(var(--radius-button) * .8);display:flex;align-items:center;justify-content:center;color:var(--ink-soft);cursor:pointer}
+.rail-btn:hover{background:var(--soft);color:var(--ink)}
+.rail-btn.is-active{background:var(--soft);color:var(--ink);box-shadow:inset 3px 0 0 var(--action)}
+.rail-btn svg{width:20px;height:20px}
+.rail-btn{font-size:19px;font-weight:600}
+/* Tools stay calm: no breathing halo on buttons unless asked for with .btn--pulse */
+[data-tool] .btn{animation:none}
+[data-tool] .btn--pulse{animation:chakra-pulse 2.8s ease-out infinite}
+
+/* Chrome bits */
+.crumb{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-soft)}
+.crumb strong{color:var(--ink)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--action)}
+.dot--ok{background:#22C55E}.dot--busy{background:#FACC15;animation:chakra-pulse 1.6s ease-out infinite}.dot--off{background:var(--ink-soft)}
+.kbd{font:600 11px ui-monospace,SFMono-Regular,Menlo,monospace;padding:2px 6px;border-radius:5px;background:var(--soft);color:var(--ink-soft);box-shadow:inset 0 -1px 0 var(--line)}
+.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:8px 12px;border-bottom:1px solid var(--line);background:var(--surface)}
+.btn--sm{min-height:32px;padding:0 12px;font-size:13px}
+.btn--icon{min-height:32px;width:32px;padding:0}
+.btn--ghost{background:transparent;color:var(--ink-soft);box-shadow:none}
+.btn--ghost:hover{background:var(--soft);color:var(--ink);box-shadow:none;transform:none}
+.seg{display:inline-flex;padding:3px;border-radius:calc(var(--radius-button) * .8);background:var(--soft);gap:2px}
+.seg>*{padding:5px 10px;border-radius:calc(var(--radius-button) * .6);font-size:13px;color:var(--ink-soft);cursor:pointer}
+.seg>.is-active{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.3)}
+.tabs{display:flex;gap:2px;border-bottom:1px solid var(--line);background:var(--surface);overflow-x:auto}
+.tab{padding:10px 14px;font-size:13px;color:var(--ink-soft);white-space:nowrap;cursor:pointer;border-bottom:2px solid transparent}
+.tab.is-active{color:var(--ink);border-bottom-color:var(--action)}
+
+/* Panels, lists, trees */
+.pane{display:flex;flex-direction:column;min-height:0}
+.pane__head{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);border-bottom:1px solid var(--line)}
+.pane__body{padding:12px 14px;display:flex;flex-direction:column;gap:10px;overflow:auto}
+.tree{display:flex;flex-direction:column;font-size:13px}
+.tree__item{display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:6px;color:var(--ink-soft);cursor:pointer}
+.tree__item:hover{background:var(--soft);color:var(--ink)}
+.tree__item.is-active{background:var(--soft);color:var(--ink)}
+.tree__item--child{padding-left:28px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field>label{font-size:12px;font-weight:600;color:var(--ink-soft)}
+[data-tool] .input,[data-tool] textarea.input,[data-tool] select.input{background:var(--surface-2);border-color:var(--line);color:var(--ink);font-size:14px;min-height:38px}
+[data-tool] .input:focus{outline:2px solid var(--action);outline-offset:0}
+.range{appearance:none;width:100%;height:4px;border-radius:2px;background:var(--soft);outline:0}
+.range::-webkit-slider-thumb{appearance:none;width:16px;height:16px;border-radius:50%;background:var(--action);border:2px solid var(--surface)}
+.toggle{width:36px;height:20px;border-radius:10px;background:var(--soft);position:relative;cursor:pointer}
+.toggle::after{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:var(--ink-soft);transition:transform .2s var(--ease)}
+.toggle.is-on{background:var(--action)}
+.toggle.is-on::after{transform:translateX(16px);background:var(--on-action)}
+
+/* Chat (AI Studio, the Oracle) */
+.chat{display:flex;flex-direction:column;gap:18px;padding:24px;max-width:860px;margin:0 auto;width:100%}
+.msg{display:flex;gap:12px;align-items:flex-start}
+.msg__avatar{flex:none;width:32px;height:32px;border-radius:50%;background:var(--soft);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--ink)}
+.msg--ai .msg__avatar{background:var(--action);color:var(--on-action)}
+.msg__body{display:flex;flex-direction:column;gap:8px;min-width:0;font-size:15px;line-height:1.6}
+.msg--user .msg__body{background:var(--surface-2);padding:12px 16px;border-radius:var(--radius-card)}
+.msg__meta{font-size:12px;color:var(--ink-soft)}
+.composer{position:sticky;bottom:0;padding:12px 24px 20px;background:linear-gradient(180deg,transparent,var(--bg) 30%)}
+.composer__box{max-width:860px;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-card);padding:10px 10px 8px;display:flex;flex-direction:column;gap:8px;box-shadow:0 20px 50px -24px var(--shadow)}
+.composer__box textarea{background:transparent;border:0;color:var(--ink);font:15px/1.5 var(--font-body);resize:none;outline:0;padding:6px 8px;min-height:44px}
+.composer__row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.thinking{display:inline-flex;gap:4px;align-items:center}
+.thinking>span{width:6px;height:6px;border-radius:50%;background:var(--ink-soft);animation:chakra-breath 1.4s ease-in-out infinite}
+.thinking>span:nth-child(2){animation-delay:.2s}.thinking>span:nth-child(3){animation-delay:.4s}
+
+/* Code and terminal */
+.code{font:13px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--surface-2);border:1px solid var(--line);border-radius:calc(var(--radius-card) * .6);padding:14px 16px;overflow:auto;color:var(--ink);white-space:pre}
+.code .k{color:var(--action)}.code .s{color:#86EFAC}.code .c{color:var(--ink-soft)}.code .n{color:#FDBA74}
+.term{font:13px/1.6 ui-monospace,Menlo,Consolas,monospace;background:#0A0C0F;color:#D1D5DB;padding:12px 16px;white-space:pre-wrap}
+.term .p{color:var(--action)}
+
+/* Node graph (ComfyUI-style) */
+.graph{position:relative;min-height:480px;background-color:var(--bg);background-image:radial-gradient(var(--line) 1px,transparent 1px);background-size:22px 22px;overflow:hidden}
+.node{position:absolute;min-width:200px;background:var(--surface);border:1px solid var(--line);border-radius:calc(var(--radius-card) * .6);box-shadow:0 16px 40px -20px var(--shadow);font-size:12.5px}
+.node__head{padding:8px 12px;border-bottom:1px solid var(--line);font-weight:700;color:var(--ink);display:flex;justify-content:space-between;align-items:center;border-top:3px solid var(--action);border-radius:calc(var(--radius-card) * .6) calc(var(--radius-card) * .6) 0 0}
+.node__row{display:flex;justify-content:space-between;align-items:center;padding:6px 12px;color:var(--ink-soft)}
+.node__row .port{width:10px;height:10px;border-radius:50%;background:var(--action);box-shadow:0 0 0 2px var(--surface)}
+.node__row .port--in{margin-left:-17px}.node__row .port--out{margin-right:-17px}
+.node.is-running .node__head{border-top-color:#FACC15}
+.node.is-done .node__head{border-top-color:#22C55E}
+.wire{position:absolute;inset:0;pointer-events:none}
+.wire path{fill:none;stroke:var(--action);stroke-width:2;opacity:.7}
+
+/* Status + toasts */
+.status{display:flex;align-items:center;gap:14px;padding:0 12px;height:28px;font-size:12px;color:var(--ink-soft);background:var(--surface);border-top:1px solid var(--line)}
+.toast{position:fixed;right:16px;bottom:16px;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--action);border-radius:10px;padding:12px 14px;font-size:13px;color:var(--ink);box-shadow:0 20px 50px -20px var(--shadow)}
+
+/* ---------- 3rd-party theme hooks ----------
+   ComfyUI (new frontend): Settings → Appearance → Color palette → import
+   chakras-comfy.json (generated by tools/make-comfy-theme.py from this file).
+   VS Code / Cursor / Windsurf: workbench.colorCustomizations in settings.json,
+   generated by the same script. JupyterLab / Streamlit / Gradio: link this
+   file in the custom CSS slot; they all respect the .wb and .chat classes.  */

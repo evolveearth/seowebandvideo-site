@@ -1,0 +1,82 @@
+/* ============================================================================
+   chakra-03-solar.css — CHAKRA 03 (MANIPURA · SOLAR ALCHEMY & ELEMENTAL METABOLISM)
+   Architecture: 1 Global (chakras.css) + 1 Per-Chakra Override Sheet (@layer chakra)
+   Frequency: 528 Hz | Spectrum: 580 nm Saffron Amber & Forest Olive | Petals: 10 (Dam · Dham · Nam · Tam · Tham · Dam · Dham · Nam · Pam · Pham) | Mantra: RAM
+   Somatic Evolution: Burnout & Control -> Sovereign Warmth & Vitality
+   Canonical Sites: poweryogadiet.com · Dedicated Taxes (Isolated) · 03 Solar Personal
+   ============================================================================ */
+@layer reset, tokens, chakra, layout, objects, modes, chrome, utilities;
+
+@layer chakra {
+  [data-chakra="solar"],
+  [data-chakra="solar"][data-strength="bright"],
+  [data-chakra="poweryogadiet"] {
+    --chakra-active-key: "solar";
+    --chakra-active-num: "03";
+    --chakra-active-hz: "528 Hz";
+    --chakra-active-nm: "580 nm Saffron Amber & Forest Olive";
+    --chakra-petals: "10 (Dam · Dham · Nam · Tam · Tham · Dam · Dham · Nam · Pam · Pham)";
+    --chakra-mantra: "RAM";
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --display-weight: 600;
+    --display-italic: normal;
+    --radius-button: 999px;
+    --radius-card: 16px;
+    --motion: 320ms;
+    --ease: cubic-bezier(.34, 1.56, .64, 1);
+    --rx-vata: #D97706;
+    --rx-pitta: #2E6F40;
+    --rx-kapha: #EAB308;
+    --bg: #FBF7EE;
+    --surface: #FFFFFF;
+    --soft: #FEF0C7;
+    --ink: #201A0E;
+    --ink-soft: #574D38;
+    --line: #ECE3CE;
+    --link: #2E6F40;
+    --action: #D97706;
+    --on-action: #FFFFFF;
+    --shadow: rgba(217, 119, 6, 0.16);
+    --ee-canvas: var(--bg);
+    --ee-surface: var(--surface);
+    --ee-ink: var(--ink);
+    --ee-ink-soft: var(--ink-soft);
+    --ee-vision-blue: var(--action);
+    --ee-vision-sky: var(--link);
+    --ee-hairline: var(--line);
+  }
+
+  [data-chakra="solar"][data-strength="earthy"] {
+    --bg: #F7F1E3; --surface: #FFFFFF; --soft: #EFE2BF;
+    --ink: #262015; --ink-soft: #5E5340; --line: #E5D9BE;
+    --link: #355E3B; --action: #B06C1B; --on-action: #FFFFFF;
+    --shadow: rgba(176, 108, 27, 0.16);
+  }
+
+  [data-chakra="solar"][data-strength="pastel"] {
+    --bg: #FDFBF4; --surface: #FFFFFF; --soft: #FFF5D6;
+    --ink: #262015; --ink-soft: #665B45; --line: #F1E9D6;
+    --link: #468356; --action: #E69532; --on-action: #FFFFFF;
+    --shadow: rgba(230, 149, 50, 0.14);
+  }
+
+  [data-mode="dark"][data-chakra="solar"],
+  [data-theme="dark"][data-chakra="solar"],
+  html[data-dark-test="true"][data-theme="dark"][data-chakra="solar"] {
+    color-scheme: dark;
+    --bg: #0B0A09; --surface: #181512; --soft: #12100E;
+    --ink: #F3EFE6; --ink-soft: #C6BEB1; --line: rgba(217, 171, 92, 0.24);
+    --link: #E8C47E; --action: #D9AB5C; --on-action: #0B0A09;
+    --shadow: rgba(0, 0, 0, 0.60);
+  }
+
+  /* Somatic Luminance & Dosha Medicine Overrides */
+  [data-chakra="solar"][data-somatic="dissonant"] { --action: #64748B; --link: #475569; }
+  [data-chakra="solar"][data-somatic="grounding"] { --action: var(--rx-vata); }
+  [data-chakra="solar"][data-somatic="healed"]    { --action: #D97706; }
+  [data-chakra="solar"][data-somatic="transmuted"] { --action: #2E6F40; }
+  [data-chakra="solar"][data-dosha="vata"]  { --dosha-medicine: var(--rx-vata); }
+  [data-chakra="solar"][data-dosha="pitta"] { --dosha-medicine: var(--rx-pitta); }
+  [data-chakra="solar"][data-dosha="kapha"] { --dosha-medicine: var(--rx-kapha); }
+}

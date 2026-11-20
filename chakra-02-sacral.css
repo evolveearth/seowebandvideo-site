@@ -1,0 +1,83 @@
+/* ============================================================================
+   chakra-02-sacral.css — CHAKRA 02 (SVADHISTHANA · SACRED WATERS & TANTRA)
+   Architecture: 1 Global (chakras.css) + 1 Per-Chakra Override Sheet (@layer chakra)
+   Frequency: 417 Hz | Spectrum: 605 nm Warm Terracotta & Lagoon Teal | Petals: 6 (Bam · Bham · Mam · Yam · Ram · Lam) | Mantra: VAM
+   Somatic Evolution: Numbness & Contraction -> Sacred Relational Flow
+   Canonical Sites: tantricunity.com · hibalove.com · 02 Sacral Personal
+   ============================================================================ */
+@layer reset, tokens, chakra, layout, objects, modes, chrome, utilities;
+
+@layer chakra {
+  [data-chakra="sacral"],
+  [data-chakra="sacral"][data-strength="bright"],
+  [data-chakra="tantricunity"],
+[data-chakra="hibalove"] {
+    --chakra-active-key: "sacral";
+    --chakra-active-num: "02";
+    --chakra-active-hz: "417 Hz";
+    --chakra-active-nm: "605 nm Warm Terracotta & Lagoon Teal";
+    --chakra-petals: "6 (Bam · Bham · Mam · Yam · Ram · Lam)";
+    --chakra-mantra: "VAM";
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --display-weight: 500;
+    --display-italic: italic;
+    --radius-button: 999px;
+    --radius-card: 24px;
+    --motion: 600ms;
+    --ease: cubic-bezier(.22, .61, .36, 1);
+    --rx-vata: #EA580C;
+    --rx-pitta: #0E7C86;
+    --rx-kapha: #F97316;
+    --bg: #FDF8F3;
+    --surface: #FFFFFF;
+    --soft: #FCE6D8;
+    --ink: #231815;
+    --ink-soft: #5C4740;
+    --line: #EFE2D8;
+    --link: #0E7C86;
+    --action: #EA580C;
+    --on-action: #FFFFFF;
+    --shadow: rgba(234, 88, 12, 0.16);
+    --ee-canvas: var(--bg);
+    --ee-surface: var(--surface);
+    --ee-ink: var(--ink);
+    --ee-ink-soft: var(--ink-soft);
+    --ee-vision-blue: var(--action);
+    --ee-vision-sky: var(--link);
+    --ee-hairline: var(--line);
+  }
+
+  [data-chakra="sacral"][data-strength="earthy"] {
+    --bg: #FAF3EB; --surface: #FFFFFF; --soft: #F2DFD0;
+    --ink: #2A1E17; --ink-soft: #635046; --line: #E8D9CB;
+    --link: #1F6B72; --action: #B5552F; --on-action: #FFFFFF;
+    --shadow: rgba(181, 85, 47, 0.16);
+  }
+
+  [data-chakra="sacral"][data-strength="pastel"] {
+    --bg: #FEFAF6; --surface: #FFFFFF; --soft: #FDEEE3;
+    --ink: #2B201C; --ink-soft: #6B564E; --line: #F3E7DD;
+    --link: #2B8A92; --action: #F0784A; --on-action: #FFFFFF;
+    --shadow: rgba(240, 120, 74, 0.14);
+  }
+
+  [data-mode="dark"][data-chakra="sacral"],
+  [data-theme="dark"][data-chakra="sacral"],
+  html[data-dark-test="true"][data-theme="dark"][data-chakra="sacral"] {
+    color-scheme: dark;
+    --bg: #0D0A08; --surface: #1C1512; --soft: #15100D;
+    --ink: #F5EFEA; --ink-soft: #C9BDB4; --line: rgba(212, 132, 90, 0.24);
+    --link: #E5A17C; --action: #D4845A; --on-action: #0D0A08;
+    --shadow: rgba(0, 0, 0, 0.60);
+  }
+
+  /* Somatic Luminance & Dosha Medicine Overrides */
+  [data-chakra="sacral"][data-somatic="dissonant"] { --action: #64748B; --link: #475569; }
+  [data-chakra="sacral"][data-somatic="grounding"] { --action: var(--rx-vata); }
+  [data-chakra="sacral"][data-somatic="healed"]    { --action: #EA580C; }
+  [data-chakra="sacral"][data-somatic="transmuted"] { --action: #0E7C86; }
+  [data-chakra="sacral"][data-dosha="vata"]  { --dosha-medicine: var(--rx-vata); }
+  [data-chakra="sacral"][data-dosha="pitta"] { --dosha-medicine: var(--rx-pitta); }
+  [data-chakra="sacral"][data-dosha="kapha"] { --dosha-medicine: var(--rx-kapha); }
+}

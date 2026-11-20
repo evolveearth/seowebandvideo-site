@@ -1,0 +1,83 @@
+/* ============================================================================
+   chakra-07-crown.css — CHAKRA 07 (SAHASRARA · INCORRUPTIBLE GOVERNANCE & UNITY)
+   Architecture: 1 Global (chakras.css) + 1 Per-Chakra Override Sheet (@layer chakra)
+   Frequency: 963 Hz | Spectrum: 400 nm Royal Violet & Liquid Gold | Petals: 1,000 (50 Sanskrit Letters × 20 Rounds) | Mantra: AH · SILENCE
+   Somatic Evolution: Separation & Fragmentation -> Indivisible Whole
+   Canonical Sites: onetruedao.org · seven-sacred-gates · 07 Crown Personal
+   ============================================================================ */
+@layer reset, tokens, chakra, layout, objects, modes, chrome, utilities;
+
+@layer chakra {
+  [data-chakra="crown"],
+  [data-chakra="crown"][data-strength="bright"],
+  [data-chakra="onetruedao"],
+[data-chakra="chakrajourney"] {
+    --chakra-active-key: "crown";
+    --chakra-active-num: "07";
+    --chakra-active-hz: "963 Hz";
+    --chakra-active-nm: "400 nm Royal Violet & Liquid Gold";
+    --chakra-petals: "1,000 (50 Sanskrit Letters × 20 Rounds)";
+    --chakra-mantra: "AH · SILENCE";
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --display-weight: 500;
+    --display-italic: normal;
+    --radius-button: 999px;
+    --radius-card: 20px;
+    --motion: 500ms;
+    --ease: cubic-bezier(.16, 1, .3, 1);
+    --rx-vata: #9C6B12;
+    --rx-pitta: #9333EA;
+    --rx-kapha: #A855F7;
+    --bg: #FBF9FE;
+    --surface: #FFFFFF;
+    --soft: #F3E8FF;
+    --ink: #241133;
+    --ink-soft: #5E4E6B;
+    --line: #ECE3F4;
+    --link: #9C6B12;
+    --action: #9333EA;
+    --on-action: #FFFFFF;
+    --shadow: rgba(147, 51, 234, 0.16);
+    --ee-canvas: var(--bg);
+    --ee-surface: var(--surface);
+    --ee-ink: var(--ink);
+    --ee-ink-soft: var(--ink-soft);
+    --ee-vision-blue: var(--action);
+    --ee-vision-sky: var(--link);
+    --ee-hairline: var(--line);
+  }
+
+  [data-chakra="crown"][data-strength="earthy"] {
+    --bg: #F8F5FB; --surface: #FFFFFF; --soft: #EAE0F2;
+    --ink: #281933; --ink-soft: #61536B; --line: #E5DCEC;
+    --link: #875E18; --action: #6E3596; --on-action: #FFFFFF;
+    --shadow: rgba(110, 53, 150, 0.16);
+  }
+
+  [data-chakra="crown"][data-strength="pastel"] {
+    --bg: #FDFBFE; --surface: #FFFFFF; --soft: #F6EEFF;
+    --ink: #2B193B; --ink-soft: #685876; --line: #F0E8F7;
+    --link: #B07D22; --action: #AA5CF0; --on-action: #FFFFFF;
+    --shadow: rgba(170, 92, 240, 0.14);
+  }
+
+  [data-mode="dark"][data-chakra="crown"],
+  [data-theme="dark"][data-chakra="crown"],
+  html[data-dark-test="true"][data-theme="dark"][data-chakra="crown"] {
+    color-scheme: dark;
+    --bg: #0B090E; --surface: #1A1623; --soft: #131019;
+    --ink: #F5F2F8; --ink-soft: #C6BFD1; --line: rgba(164, 136, 206, 0.25);
+    --link: #BFA8E2; --action: #A488CE; --on-action: #0B090E;
+    --shadow: rgba(0, 0, 0, 0.65);
+  }
+
+  /* Somatic Luminance & Dosha Medicine Overrides */
+  [data-chakra="crown"][data-somatic="dissonant"] { --action: #64748B; --link: #475569; }
+  [data-chakra="crown"][data-somatic="grounding"] { --action: var(--rx-vata); }
+  [data-chakra="crown"][data-somatic="healed"]    { --action: #9333EA; }
+  [data-chakra="crown"][data-somatic="transmuted"] { --action: #9C6B12; }
+  [data-chakra="crown"][data-dosha="vata"]  { --dosha-medicine: var(--rx-vata); }
+  [data-chakra="crown"][data-dosha="pitta"] { --dosha-medicine: var(--rx-pitta); }
+  [data-chakra="crown"][data-dosha="kapha"] { --dosha-medicine: var(--rx-kapha); }
+}

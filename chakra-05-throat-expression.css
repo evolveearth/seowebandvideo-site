@@ -1,0 +1,82 @@
+/* ============================================================================
+   chakra-05-throat.css — CHAKRA 05 (VISHUDDHA · ACOUSTIC CLARITY & PUBLISHING)
+   Architecture: 1 Global (chakras.css) + 1 Per-Chakra Override Sheet (@layer chakra)
+   Frequency: 741 Hz | Spectrum: 478 nm Acoustic Sapphire & Ice Cyan | Petals: 16 (16 Sanskrit Vowels · Am to Aham) | Mantra: HAM
+   Somatic Evolution: Choked Soot Collar -> Aquamarine Harmonic Chalice
+   Canonical Sites: seowebandvideo.com · RefineMe · Approved Stylesheets · 05 Throat Personal
+   ============================================================================ */
+@layer reset, tokens, chakra, layout, objects, modes, chrome, utilities;
+
+@layer chakra {
+  [data-chakra="throat"],
+  [data-chakra="throat"][data-strength="bright"],
+  [data-chakra="seowebandvideo"] {
+    --chakra-active-key: "throat";
+    --chakra-active-num: "05";
+    --chakra-active-hz: "741 Hz";
+    --chakra-active-nm: "478 nm Acoustic Sapphire & Ice Cyan";
+    --chakra-petals: "16 (16 Sanskrit Vowels · Am to Aham)";
+    --chakra-mantra: "HAM";
+    --font-display: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --display-weight: 700;
+    --display-italic: normal;
+    --radius-button: 6px;
+    --radius-card: 10px;
+    --motion: 160ms;
+    --ease: cubic-bezier(.2, .9, .3, 1);
+    --rx-vata: #0284C7;
+    --rx-pitta: #38BDF8;
+    --rx-kapha: #B45309;
+    --bg: #F6FAFD;
+    --surface: #FFFFFF;
+    --soft: #E0F2FE;
+    --ink: #0C1B2A;
+    --ink-soft: #3E5266;
+    --line: #DCE6F0;
+    --link: #B45309;
+    --action: #0284C7;
+    --on-action: #FFFFFF;
+    --shadow: rgba(2, 132, 199, 0.16);
+    --ee-canvas: var(--bg);
+    --ee-surface: var(--surface);
+    --ee-ink: var(--ink);
+    --ee-ink-soft: var(--ink-soft);
+    --ee-vision-blue: var(--action);
+    --ee-vision-sky: var(--link);
+    --ee-hairline: var(--line);
+  }
+
+  [data-chakra="throat"][data-strength="earthy"] {
+    --bg: #F3F7FA; --surface: #FFFFFF; --soft: #DAE6F0;
+    --ink: #152230; --ink-soft: #495869; --line: #D6E0E8;
+    --link: #9A4B14; --action: #1E6091; --on-action: #FFFFFF;
+    --shadow: rgba(30, 96, 145, 0.16);
+  }
+
+  [data-chakra="throat"][data-strength="pastel"] {
+    --bg: #F9FCFE; --surface: #FFFFFF; --soft: #E8F5FE;
+    --ink: #152536; --ink-soft: #4D6073; --line: #E3ECF3;
+    --link: #C26A27; --action: #3898EC; --on-action: #FFFFFF;
+    --shadow: rgba(56, 152, 236, 0.14);
+  }
+
+  [data-mode="dark"][data-chakra="throat"],
+  [data-theme="dark"][data-chakra="throat"],
+  html[data-dark-test="true"][data-theme="dark"][data-chakra="throat"] {
+    color-scheme: dark;
+    --bg: #080C11; --surface: #141E2A; --soft: #0E151E;
+    --ink: #EFF4F9; --ink-soft: #B8C7D8; --line: rgba(94, 152, 200, 0.24);
+    --link: #82B4DE; --action: #5E98C8; --on-action: #080C11;
+    --shadow: rgba(0, 0, 0, 0.60);
+  }
+
+  /* Somatic Luminance & Dosha Medicine Overrides */
+  [data-chakra="throat"][data-somatic="dissonant"] { --action: #64748B; --link: #475569; }
+  [data-chakra="throat"][data-somatic="grounding"] { --action: var(--rx-vata); }
+  [data-chakra="throat"][data-somatic="healed"]    { --action: #0284C7; }
+  [data-chakra="throat"][data-somatic="transmuted"] { --action: #B45309; }
+  [data-chakra="throat"][data-dosha="vata"]  { --dosha-medicine: var(--rx-vata); }
+  [data-chakra="throat"][data-dosha="pitta"] { --dosha-medicine: var(--rx-pitta); }
+  [data-chakra="throat"][data-dosha="kapha"] { --dosha-medicine: var(--rx-kapha); }
+}
